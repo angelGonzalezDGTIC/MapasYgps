@@ -13,6 +13,9 @@
 		3D3CE62B29200D2900401B35 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3CE62929200D2900401B35 /* Main.storyboard */; };
 		3D3CE62D29200D2C00401B35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D3CE62C29200D2C00401B35 /* Assets.xcassets */; };
 		3D3CE63029200D2C00401B35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3CE62E29200D2C00401B35 /* LaunchScreen.storyboard */; };
+		3D3CE63929200E0A00401B35 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3CE63829200E0A00401B35 /* CoreLocation.framework */; };
+		3D3CE63B292024E800401B35 /* MapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3CE63A292024E800401B35 /* MapaViewController.swift */; };
+		3D3CE63D2920256600401B35 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D3CE63C2920256500401B35 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		3D3CE62C29200D2C00401B35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3D3CE62F29200D2C00401B35 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3D3CE63129200D2C00401B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D3CE63829200E0A00401B35 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3D3CE63A292024E800401B35 /* MapaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapaViewController.swift; sourceTree = "<group>"; };
+		3D3CE63C2920256500401B35 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +37,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3D3CE63D2920256600401B35 /* MapKit.framework in Frameworks */,
+				3D3CE63929200E0A00401B35 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +50,7 @@
 			children = (
 				3D3CE62229200D2900401B35 /* MapasYgps */,
 				3D3CE62129200D2900401B35 /* Products */,
+				3D3CE63729200E0800401B35 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +72,18 @@
 				3D3CE62C29200D2C00401B35 /* Assets.xcassets */,
 				3D3CE62E29200D2C00401B35 /* LaunchScreen.storyboard */,
 				3D3CE63129200D2C00401B35 /* Info.plist */,
+				3D3CE63A292024E800401B35 /* MapaViewController.swift */,
 			);
 			path = MapasYgps;
+			sourceTree = "<group>";
+		};
+		3D3CE63729200E0800401B35 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3D3CE63C2920256500401B35 /* MapKit.framework */,
+				3D3CE63829200E0A00401B35 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3D3CE62829200D2900401B35 /* ViewController.swift in Sources */,
+				3D3CE63B292024E800401B35 /* MapaViewController.swift in Sources */,
 				3D3CE62429200D2900401B35 /* AppDelegate.swift in Sources */,
 				3D3CE62629200D2900401B35 /* SceneDelegate.swift in Sources */,
 			);
@@ -290,17 +310,21 @@
 				DEVELOPMENT_TEAM = E9KS5E39JS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MapasYgps/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Requerido para saber donde estás";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Requerido para saber donde estás";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Requerido para saber donde estás";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.janzelaznog.MapasYgps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.janzelaznog.VideoSession;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -318,17 +342,21 @@
 				DEVELOPMENT_TEAM = E9KS5E39JS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MapasYgps/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Requerido para saber donde estás";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Requerido para saber donde estás";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Requerido para saber donde estás";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.janzelaznog.MapasYgps;
+				PRODUCT_BUNDLE_IDENTIFIER = com.janzelaznog.VideoSession;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
