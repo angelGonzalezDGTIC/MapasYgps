@@ -32,6 +32,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         guard let ubicacion = locations.first else { /* el arreglo llegó vacio */ return }
         let textView = UITextView()
         textView.frame = self.view.frame.insetBy(dx: 30, dy: 100)
+        print ("obtuve una coordenada")
+        // Notificar que ya se obtuvo una ubicacion
+        NotificationCenter.default.post(name: NSNotification.Name("Coordenada_Recibida"),
+                                        object:nil,
+                                        userInfo: ["lat": ubicacion.coordinate.latitude,
+                                                   "lon": ubicacion.coordinate.longitude])
         // Para obtener direcciones en lenguaje humano, necesitamos usar el servicio de GEOCoding y solicitar un "reverse"
         CLGeocoder().reverseGeocodeLocation(ubicacion) { lugares, error in
             if error != nil {
