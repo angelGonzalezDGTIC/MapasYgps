@@ -16,6 +16,27 @@ class MapaViewController: UIViewController, MKMapViewDelegate {
     let colores = [UIColor.blue, UIColor.green, UIColor.orange, UIColor.yellow, UIColor.brown]
     var ruta = 0
     
+    // Detectar aceleración. (sacudida)
+    override func motionEnded(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        if elMapa.mapType == .standard {
+            elMapa.mapType = .hybrid
+        }
+        else {
+            elMapa.mapType = .standard
+        }
+    }
+    
+    // Detectar rotación (sobre eje X / Y)
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        print ("cambiando a \(UIDevice.current.orientation)")
+    }
+    
+    override func viewWillLayoutSubviews() {
+        // se invoca siempre que sea necesario redibujar la vista
+        print ("la vista cambió a \(UIDevice.current.orientation), rediseñar?")
+        // cambiar la interface dependiendo de la nueva orientación
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
